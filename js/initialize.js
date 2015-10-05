@@ -1,3 +1,7 @@
+//initialize Parse
+ Parse.initialize("cVPrk4Mea6My6Jc0HJQwcDKqCxAzAcKLmL1iukqQ","bEIUTjLL3VHn3ceYeIL1Nevmdo0kTKjbD1FiCqzx");
+
+//Materialize CSS stuff
 (function($){
   $(function(){
 
@@ -7,9 +11,7 @@
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-//initialize Parse
- Parse.initialize("cVPrk4Mea6My6Jc0HJQwcDKqCxAzAcKLmL1iukqQ","bEIUTjLL3VHn3ceYeIL1Nevmdo0kTKjbD1FiCqzx");
-
+//PARSE STUFF
 // Generate a User Account
 var user = new Parse.User();
 user.set("username", document.getElementById("my_id").value);
