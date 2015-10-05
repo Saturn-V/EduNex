@@ -96,6 +96,8 @@
 	 	 </header>
 
 	 	 <main>
+
+                   <!-- Script for getting a user signed up. Uses Parse as backend -->
                    <script>
                          //initialize Parse
                          Parse.initialize("cVPrk4Mea6My6Jc0HJQwcDKqCxAzAcKLmL1iukqQ","bEIUTjLL3VHn3ceYeIL1Nevmdo0kTKjbD1FiCqzx");
@@ -122,12 +124,15 @@
                                }
                          });
                    </script>
+
+                   <!-- Administrator title -->
                    <div class="card blue-grey darken-4 hoverable">
                          <div class="card-content">
                                <p class="white-text" style="font-size: 43px; font-weight: 200">Administrator</p>
                          </div>
                    </div>
 
+                   <!-- Description of ADMIN account type -->
                    <div class="card blue-grey darken-4 hoverable">
                          <div class="card-image waves-effect waves-black waves-block">
                                <img class="activator" style="height: 200px" src="img/teal.jpg">
@@ -142,22 +147,24 @@
                          </div>
                    </div>
 
+                   <!-- Register title -->
                    <div class="card blue-grey darken-4 hoverable">
                          <div class="card-content">
                                <p class="white-text" style="font-size: 43px; font-weight: 200">Register</p>
                          </div>
                    </div>
 
+                   <!-- Form for getting the user (ADMIN) to sign up -->
                    <div class="card blue-grey darken-4 hoverable">
                          <div class="card-content">
                                <span class="card-title activator white-text row">
                                            <form class="col s12">
                                                  <div class="row">
-                                                       <div class="input-field col s6">
+                                                       <div class="input-field col s6" style="margin-top: 30px">
                                                              <input id="my_first_name" type="text" class="validate">
                                                              <label for="first_name">First Name</label>
                                                        </div>
-                                                       <div class="input-field col s6">
+                                                       <div class="input-field col s6" style="margin-top: 30px">
                                                              <input id="my_last_name" type="text" class="validate">
                                                              <label for="last_name">Last Name</label>
                                                        </div>
@@ -182,10 +189,18 @@
                                                  </div>
                                            </form>
                                </span>
+
+                               <!-- Submit Button for the form -->
+                   <button class="btn waves-effect teal waves-black" style="margin-left: 21px" type="submit" name="action">Submit
+                         <i class="material-icons right">send</i>
+                   </button>
+
                          </div>
                    </div>
+
        	 </main>
 
+             <!-- You guessed it; Footer. -->
 	 	 <footer class="page-footer blue-grey darken-4 hoverable">
           		 <div class="container">
              		 <div class="row">
