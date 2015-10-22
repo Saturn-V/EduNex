@@ -7,26 +7,30 @@
 
              $('.button-collapse').sideNav();
              $('.collapsible').collapsible();
+             $('input#input_text, textarea#textarea1').characterCounter();
+             $('ul.tabs').tabs();
+             $('select').material_select();
 
-             //parse stuff
-             // Generate a User Account
-             var username = $("#my_id").val();
-
-             var password = $("#my_password").val();
-
-             var email = $("#my_email").val();
-
-             var firstname = $("#first_name").val();
-
-             var lastname = $("#last_name").val();
-
-             var user = new Parse.User();
-  
              // other fields can be set just like with Parse.Object
              //user.set("phone", "650-555-0000");
               
+             //parse stuff
+             // Generate a User Account
              $("#sign_up_submit").click( function(event) {
                    console.log("You clicked me!");
+
+                   var username = $("#my_id").val();
+
+                   var password = $("#my_password").val();
+
+                   var email = $("#my_email").val();
+
+                   var firstname = $("#first_name").val();
+
+                   var lastname = $("#last_name").val();
+
+                   var user = new Parse.User();
+
                    event.preventDefault();
 
                    user.set("username", username);
@@ -40,6 +44,14 @@
                                // Hooray! Let them use the app now.
                                alert("yay! it worked (created user)");
                                console.log("This works!");
+                               var currentUser = Parse.User.current();
+                               if (currentUser) {
+                                  // do stuff with the user
+                                  window.location.href="userSignUpProcess.html";
+                               } else {
+                                  // show the signup or login page
+                                  window.location.href="index.html";
+                               }
                          },
                          error: function(user, error) {
                                // Show the error message somewhere and let the user try again.
