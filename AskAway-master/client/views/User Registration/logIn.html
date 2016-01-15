@@ -1,10 +1,7 @@
 <template name="logIn">
 
-    {{#if currentUser}}
-        {{> signedInHeader}}
-    {{else}}
         {{> notSignedInHeader}}
-    {{/if}}
+
     <main>
         <!-- Log In title -->
         <div class="card blue-grey darken-4 hoverable">
@@ -17,14 +14,14 @@
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12 white-text">
-                        <input id="email" type="text" class="validate">
-                        <label for="email">Email Address</label>
+                        <input id="my_email" type="text" class="validate">
+                        <label for="my_email">Email Address</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12 white-text">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password</label>
+                        <input id="usersPassword" type="password" class="validate">
+                        <label for="usersPassword">Password</label>
                     </div>
                 </div>
 

@@ -1,22 +1,27 @@
-  ul.side-nav li:hover, ul.side-nav.fixed li.active {
-   background-color: rgba(0, 0, 0, 0.25);
+ul.side-nav li:hover, ul.side-nav.fixed li.active {
+      background-color: rgba(0, 0, 0, 0.25);
 }
 
 body {
-    display: flex !important;
-    min-height: 100vh !important;
-    flex-direction: column !important;
-    background-color: #37474f !important;
-  }
+      display: flex !important;
+      min-height: 100vh !important;
+      flex-direction: column !important;
+      background-color: #37474f !important;
+}
 
-  main {
-    flex: 1 0 auto !important;
-  }
+main {
+      flex: 1 !important;
+      height: 100%;
+}
 
-  .tabs .indicator{
+.tabs .indicator{
   	background-color: #009688;
-  }
+}
 
-  #comment {
-    right: 10px !important;
-  }
+#comment {
+      right: 10px !important;
+}
+
+.comment {
+      border-radius: 50px 0px 0px 50px;
+}

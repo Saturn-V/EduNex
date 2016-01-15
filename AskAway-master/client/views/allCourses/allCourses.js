@@ -1,15 +1,16 @@
-Template.coursesOverview.helpers({
-    getCourses: function() {
-        return Courses.find({}, {sort : {courseCode : 1}});
-    },
-
-    getQuestions : function(){
-        var questions = Questions.find({postID: Router.current().params._id}, {sort: {postedAt: -1}}).fetch();
-        return questions;
+Template.allCourses.helpers({
+    courses: function() {
+        var currentDepartment = Router.current().params._id;
+        return Courses.find({departmentID: currentDepartment}, {sort : {courseCode : 1}});
     }
+
+    // getQuestions : function(){
+    //     var questions = Questions.find({postID: Router.current().params._id}, {sort: {postedAt: -1}}).fetch();
+    //     return questions;
+    // }
 })
 
-Template.coursesOverview.onRendered(function(){
+Template.allCourses.onRendered(function(){
 
     $('.button-collapse').sideNav();
     $('.collapsible').collapsible();
@@ -22,7 +23,7 @@ Template.coursesOverview.onRendered(function(){
 
 
 
-Template.coursesOverview.events({
+Template.allCourses.events({
     'click #postQuestion': function(event) {
 
         var title = $('#title').val();

@@ -5,20 +5,21 @@ Template.aboutUs.onRendered(function(){
     $('input#input_text, textarea#textarea1').characterCounter();
     $('ul.tabs').tabs();
     $('select').material_select();
-    $("body").css({});
+    // $("body").css({});
     $('.modal-trigger').leanModal();
+    $("#sidenav-overlay").remove();
     
-    $(document)
-    .ready(function() {
+    // $(document)
+    // .ready(function() {
 
-        // fix menu when passed
-        $('#slide-out')
-        .visibility({
-            once: false,
-            removeCover: function() {
-                $('body').css({});
-            }
-        });
-    });
+    //     // fix menu when passed
+    //     $('#slide-out')
+    //     .visibility({
+    //         once: false,
+    //         removeCover: function() {
+    //             $('body').css({});
+    //         }
+    //     });
+    // });
     
 })

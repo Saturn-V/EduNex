@@ -25,3 +25,7 @@ materialize:materialize@=0.97.0
 email
 kevohagan:sweetalert
 jamesfebin:azure-blob-upload
+anti:fake
+dburles:factory
+accounts-base
+accounts-ui

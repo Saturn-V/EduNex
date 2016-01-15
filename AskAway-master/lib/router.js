@@ -6,7 +6,7 @@ Router.configure({
 
 
 // Home
-Router.route('/', {
+Router.route('/landing', {
   template: 'landing',
   name: "landing"
 });
@@ -56,20 +56,25 @@ Router.route('/forgotPassword', {
 });
 
 
-Router.route('/coursesOverview/:_id', {
-    template: 'coursesOverview',
-    name: 'coursesOverview',
+Router.route('departmentOverview/allCourses/:_id', {
+    template: 'allCourses',
+    name: 'allCourses',
     data : function(){
-        return Departments.findOne({_id: this.params._id });
+        var currentDepartment = this.params._id;
+        Session.set('currentDepartment', currentDepartment);
+        return Departments.findOne({ _id: currentDepartment });
     }
-})
+});
 
 
-Router.route('/courseDetails/:_id', {
+Router.route('departmentOverview/allCourses/courseDetails/:_id', {
     template: 'courseDetails',
     name: 'courseDetails',
     data : function(){
-        return Courses.findOne({_id: this.params._id });
+        // var currentCourse = this.params._id;
+        // var course = Courses.findOne({ _id: currentCourse });
+        var currentDepartment = this.departmentID;
+        return Departments.findOne({currentDepartment});
     }
     
 })

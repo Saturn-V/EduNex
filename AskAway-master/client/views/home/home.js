@@ -6,13 +6,20 @@ Template.home.onRendered(function(){
     $('ul.tabs').tabs();
     $('select').material_select();
     $('.modal-trigger').leanModal();
+    $("#sidenav-overlay").remove();
 
 
 })
 
 Template.home.events({
-    
-    
+    // 'click #comment-submit' : function(event) {
+    //     event.preventDefault();
+
+    // }
+
+    'click #comment-delete' : function(event) {
+        Comments.remove(this._id);
+    }
 })
 
 Template.home.helpers({
@@ -29,7 +36,7 @@ Template.home.helpers({
     },
     
     getComments: function() {
-        return Comments.find({ postID: this._id });
+        return Comments.find({});
     }, 
     
     commentTitle: function() {

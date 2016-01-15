@@ -23,29 +23,49 @@ Template.logIn.onRendered(function(){
 
     
 Template.logIn.events({
-  'click #logInButton' : function(event){
-      event.preventDefault();
-      console.log("Sign in button pressed");
+      'click #logInButton' : function(event){
+            event.preventDefault();
 
-      var password = $("#password").val();
-      var email = $("#email").val();
+            //Check to confirm Button click
+            console.log("Submit button pressed");
 
+            var password = $("#usersPassword").val();
+            var email = $("#my_email").val();
 
-      Meteor.loginWithPassword(email, password, function(err){
-          if (err) {
-            swal({   
-                title: "Something appears wrong",   
-                 text: err.reason,   
-                 type: "warning",   
-                 showCancelButton: false,   
-                 confirmButtonColor: "#DD6B55",   
-                 confirmButtonText: "Let's try again!",   
-                 closeOnConfirm: false });
-          }
-          else{
-            // console.log("The user has successfully logged in. Normally you'd be routed to the home page. But that page is currently under construction");
-            Router.go("/home");
-          }
-      });
-  }
+            //trim out any whitespace
+            email = email.replace(/^\s*|\s*$/g, '');
+            password = password.replace(/^\s*|\s*$/g, '');
+
+            //validate
+            var emailIsValid = checkEmailIsValid(email);
+            var passwordIsValid = checkPasswordIsValid(password);
+
+            if (!emailIsValid || !passwordIsValid) {
+                  if (!emailIsValid) {
+                        swal("Your email address is invalid!", "warning");
+                  }
+                  if (!passwordIsValid) {
+                        swal("Your password must be at least 8 characters long!", "warning");
+                  }
+            } else {
+                  Meteor.loginWithPassword(email, password, function (error) {
+                        if (error){
+                              swal({   
+                                    title: "Something appears wrong",   
+                                    text: error.reason,   
+                                    type: "warning",   
+                                    showCancelButton: false,   
+                                    confirmButtonColor: "#DD6B55",   
+                                    confirmButtonText: "Let's try again!",   
+                                    closeOnConfirm: false 
+                              });
+                              console.log("Something went wrong when logging in the user" + error.reason);
+                        } else {
+                              console.log("Success! User logged in!");
+                              swal("Welcome!", "Login Successful!", "success");
+                              Router.go('/home');
+                        }
+                  });
+            }
+      }
 });
