@@ -1,0 +1,83 @@
+<template name="posts">
+
+
+                  <div class="row">
+                        <div class="col s12">
+                              <div class="card blue-grey darken-4" style="margin-bottom: 0px">
+                                    <div class="card-content">
+                                          <span class="card-title white-text"> 
+
+                                          	{{title}}
+
+                                          	{{#if isUsers}}
+                                          		<button style="background: none; border: none" class="small right material-icons" id="removePost">
+                                          			close
+                                          		</button>
+                                          	{{/if}}
+                                          </span>
+                                          <p class="white-text">{{description}}</p>
+                                    </div>
+
+                                    <div class="card-action">
+
+                                          <!-- Modal Trigger -->
+                                          <a class="btn-floating modal-trigger right btn-large waves-effect waves-light red z-depth-5" style="bottom: 10px; left: 30px" href="#addNewComment" id="addNewCommentButton">
+                                          	<i class="material-icons">
+                                          		add
+                                          	</i>
+                                          </a>
+                                          
+                                          <!-- Modal Structure for adding a Comment-->
+                                          <div id="addNewComment" class="modal bottom-sheet blue-grey darken-4">
+                                                <div class="modal-content">
+                                                      <div class="row">
+                                                            <form class="col s12">
+                                                                  <div class="row">
+                                                                        <div class="input-field col s12">
+                                                                              <textarea id="comment" class="white-text materialize-textarea"></textarea>
+                                                                              <label for="comment" class="white-text">Comment</label>
+                                                                        </div>
+                                                                  </div>
+                                                            </form>
+                                                      </div>
+                                                </div>
+
+                                                <div class="modal-footer blue-grey darken-3">
+                                                      <a class="btn-flat permaTeal modal-action modal-close waves-effect waves-light right" type="submit" name="action" id="addComment"> 
+                                                      	<i class="large material-icons">
+                                                      		send
+                                                      	</i>
+                                                      </a>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        {{#each getComments}}
+
+                        <div class="col s12">
+                              <div class="card teal z-depth-5" style="margin-top: 0px; overflow: scroll; min-height: 100px">
+                                    <div class="card-content">
+                                          <span class="card-title white-text">
+
+                                                {{#if isUsers}}
+
+                                                <button class="material-icons right" style="outline: 0; background: none; border: 0" id="removeComment">
+                                                      close
+                                                </button>
+
+                                                {{/if}}
+
+                                          </span>
+                                          <p class="white-text">{{comment}}</p>
+                                    </div>
+                              </div>
+                        </div>
+
+                        {{/each}}
+
+                  </div>
+
+
+</template>

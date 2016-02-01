@@ -17,6 +17,7 @@ caching-compiler@1.0.0
 caching-html-compiler@1.0.2
 callback-hook@1.0.4
 check@1.1.0
+chriswessels:slideout@0.1.9_2
 dburles:factory@0.4.2
 ddp@1.2.2
 ddp-client@1.2.1

@@ -21,3 +21,6 @@ Accounts.onResetPasswordLink(function(token, done) {
     doneCallback = done;  
     //console.log("onResetPasswordLink, and token is  " + token);
 });
+
+
+   

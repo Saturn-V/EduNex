@@ -12,40 +12,11 @@ Template.home.onRendered(function(){
 })
 
 Template.home.events({
-    // 'click #comment-submit' : function(event) {
-    //     event.preventDefault();
 
-    // }
-
-    'click #comment-delete' : function(event) {
-        Comments.remove(this._id);
-    }
 })
 
 Template.home.helpers({
     getQuestions: function() {
-        return Questions.find({});
-    },
-    
-    title: function() {
-        return "title";
-    }, 
-    
-    description: function() {
-        return "Description";
-    },
-    
-    getComments: function() {
-        return Comments.find({});
-    }, 
-    
-    commentTitle: function() {
-        return "commentTitle";
-    },
-    
-    commentDescription: function() {
-        return "comment Description";
+        return Questions.find({}, {sort: {postedAt: -1}});
     }
-    
-    
 })

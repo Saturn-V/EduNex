@@ -14,39 +14,25 @@ Template.courseDetails.events({
                   currentCourse: Router.current().params._id,
                   curentDepartment: curentDepartment
             })
-      }, 
 
-      'click #create-comment': function(event) {
-            event.preventDefault();
-
-            var comment = $('#comment').val();
-            var currentQuestion = this._id;
-
-            Comments.insert({
-                  comment: comment,
-                  postedAt: new Date(),
-                  postedBy: Meteor.userId(),
-                  questionID: currentQuestion
-            })
+            title = "";
+            description = "";
       }
 })
 
 
 Template.courseDetails.helpers({
 
-      courses : function() {
-            var currentCourse = Router.current().params._id;
-            return Courses.findOne({ _id: currentCourse });
+      departments: function() {
+        var currentDepartmentID = this.departmentID;
+        var curentDepartment = Departments.findOne({ _id: currentDepartmentID});
+        return curentDepartment;
       },
 
       getQuestions : function(){
-            var questions = Questions.find({currentCourse: Router.current().params._id}, {sort: {postedAt: -1}}).fetch();
+            var questions = Questions.find({currentCourse: this._id}, {sort: {postedAt: -1}}).fetch();
             return questions;
       }
-    
-      // currentUser: function() {
-      //       return Meteor.user() != null;
-      // }
 })
 
 Template.courseDetails.onRendered(function(){
@@ -57,5 +43,4 @@ Template.courseDetails.onRendered(function(){
       $('ul.tabs').tabs();
       $('select').material_select();
       $('.modal-trigger').leanModal();
-      $('#modal-close').closeModal();
 })

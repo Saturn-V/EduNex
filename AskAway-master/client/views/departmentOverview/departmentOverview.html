@@ -1,39 +1,46 @@
 <template name="departmentOverview">
 
-{{> signedInHeader}}
-     
-<!-- Department title -->
-<div class="card blue-grey darken-4 hoverable">
-      <div class="card-content">
-            <p class="white-text" style="font-size: 43px; font-weight: 200">Department</p>
-            <div class="divider"></div>
-            <p class="white-text" style="font-size: 25px; font-weight: 200">Choose the department your question pertains to.</p>
-      </div>
-</div>
+      {{> signedInHeader}}
 
-<div class="row">
-
-      <div class="row">
-      <!-- makes a card for every department in the Collection "Departments" -->
-      {{#each departments}}
-
-            <a href="departmentOverview/allCourses/{{_id}}">
-                  <div class="col s12 m4 l4">
-                        <div class="card teal hoverable waves-effect waves-black">
-                              <div class="card-image" style="height: 250px">
-                                    <img src="{{img}}" style="height: 250px">
-                                    <!-- Temporary; will change to static info i.e inserted to Departments collection -->
-                                    <span class="card-title">{{departmentName}}</span>
-                              </div>
+      <body>
+            <main>
+                 
+                  <!-- Department title -->
+                  <div class="card blue-grey darken-4 hoverable">
+                        <div class="card-content">
+                              <p class="white-text" style="font-size: 43px; font-weight: 200">Department</p>
+                              <div class="divider"></div>
+                              <p class="white-text" style="font-size: 25px; font-weight: 200">Choose the department your question pertains to.</p>
                         </div>
                   </div>
-            </a>
-    
-      {{/each}}
-      </div>
 
-</div>
+                  <div class="row">
 
-{{> footer}}
+                        <div class="row">
+                        <!-- makes a card for every department in the Collection "Departments" -->
+                        {{#each departments}}
+
+                              <a href="departmentOverview/allCourses/{{_id}}">
+                                    <div class="col s12 m4 l4">
+                                          <div class="card teal hoverable waves-effect waves-black">
+                                                <div class="card-image" style="height: 250px">
+                                                      <img src="{{img}}" style="height: 250px">
+                                                      <!-- Temporary; will change to static info i.e inserted to Departments collection -->
+                                                      <span class="card-title">{{departmentName}}</span>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </a>
+                      
+                        {{/each}}
+                        </div>
+
+                  </div>
+
+            </main>
+
+            {{> footer}}
+
+      </body>
 
 </template>

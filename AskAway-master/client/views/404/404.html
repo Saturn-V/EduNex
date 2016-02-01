@@ -1,16 +1,23 @@
 <template name = '404'>
-	<div class="body-template">
-    	{{#if currentUser}}
-        	{{> signedInHeader}}
-    	{{else}}
-        	{{> notSignedInHeader}}
-    	{{/if}}
 
-    	<div class="main-template">
-        	<h2>404</h2>
-	    	<p>There was an error finding the page you were looking for. Or you're dumb. Your choice.</p>
-		</div>
+      <body>
+            <main>
 
-    	{{> footer}}
-    </div>
+            	{{#if currentUser}}
+                        {{> signedInHeader}}
+            	{{else}}
+                  	{{> notSignedInHeader}}
+            	{{/if}}
+
+            	<div class="main-template">
+                  	<h2>404</h2>
+      	           	<p>There was an error finding the page you were looking for. Or you're dumb. Your choice.</p>
+      		</div>
+
+            </main>
+
+            {{> footer}}
+
+      </body>
+
 </template>
