@@ -17,9 +17,9 @@ Router.route('/', {
   name: "landing"
 });
 
-Router.route('/signUp', {
-  template: 'signUp',
-  name: 'signUp'
+Router.route('/enroll', {
+  template: 'enroll',
+  name: 'enroll'
 });
 
 Router.route('/aboutUs', {

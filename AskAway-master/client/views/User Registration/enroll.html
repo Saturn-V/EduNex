@@ -1,43 +1,42 @@
-<template name="signUp">
+<template name="enroll">
 
-    <body>
+      <body>
 
-        {{> notSignedInHeader}}
 
-    <main>
+      <main>
 
-        <!-- Register title -->
-        <div class="card blue-grey darken-4 hoverable">
-            <div class="card-content">
-                <p class="white-text" style="font-size: 43px; font-weight: 200">Sign Up</p>
+            <!-- Register title -->
+            <div class="card dark-primary hoverable">
+                  <div class="card-content">
+                        <p class="white-text" style="font-size: 43px; font-weight: 200">Sign Up</p>
+                  </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col s12">
-                <ul class="association tabs blue-grey darken-4">
-                    <li class="tab col s3"><a class="white-text" href="#Administrator">Administrator</a></li>
-                    <li class="tab col s3"><a class="white-text" href="#Teacher">Teacher</a></li>
-                    <li class="tab col s3"><a class="white-text" href="#Student">Student</a></li>
-                </ul>
-            </div>
-            <div id="Administrator" class="col s12">
+            <div class="row">
+                  <div class="col s12">
+                        <ul class="association tabs dark-primary">
+                              <li class="tab col s3"><a class="white-text" href="#Administrator">Administrator</a></li>
+                              <li class="tab col s3"><a class="white-text" href="#Teacher">Teacher</a></li>
+                              <li class="tab col s3"><a class="white-text" href="#Student">Student</a></li>
+                        </ul>
+                  </div>
+                  <div id="Administrator" class="col s12">
 
-                <!-- Administrator title -->
-                <div class="card blue-grey darken-4 hoverable">
-                    <div class="card-content">
-                        <p class="white-text" style="font-size: 43px; font-weight: 200">Administrator</p>
-                    </div>
-                </div>
+                        <!-- Administrator title -->
+                        <div class="card dark-primary hoverable">
+                              <div class="card-content">
+                                    <p class="white-text" style="font-size: 43px; font-weight: 200">Administrator</p>
+                              </div>
+                        </div>
 
-                <!-- Form for getting the user (ADMIN) to sign up -->
-                <div class="card blue-grey darken-4 hoverable">
-                    <div class="card-content">
-                        <span class="card-title activator white-text row">
-                            <form class="col s12">
-                                <div class="row">
-                                    <!-- First Name -->
-                                    <div class="input-field col s6" style="margin-top: 30px">
+                        <!-- Form for getting the user (ADMIN) to sign up -->
+                        <div class="card dark-primary hoverable">
+                              <div class="card-content">
+                                    <span class="card-title activator white-text row">
+                                    <form class="col s12">
+                                    <div class="row">
+                                          <!-- First Name -->
+                                          <div class="input-field col s6" style="margin-top: 30px">
                                         <input id="first_name" type="text" class="validate">
                                         <label for="first_name">First Name</label>
                                     </div>
@@ -85,14 +84,14 @@
             <div id="Teacher" class="col s12">
 
                 <!-- Teacher title -->
-                <div class="card blue-grey darken-4 hoverable">
+                <div class="card dark-primary hoverable">
                     <div class="card-content">
                         <p class="white-text" style="font-size: 43px; font-weight: 200">Teacher</p>
                     </div>
                 </div>
 
                 <!-- Form for getting the user (TEACHER) to sign up -->
-                <div class="card blue-grey darken-4 hoverable">
+                <div class="card dark-primary hoverable">
                     <div class="card-content">
                         <span class="card-title activator white-text row">
                             <form class="col s12">
@@ -138,14 +137,14 @@
             <div id="Student" class="col s12">
 
                 <!-- Student title -->
-                <div class="card blue-grey darken-4 hoverable">
+                <div class="card dark-primary hoverable">
                     <div class="card-content">
                         <p class="white-text" style="font-size: 43px; font-weight: 200">Student</p>
                     </div>
                 </div>
 
                 <!-- Form for getting the user (STUDENT) to sign up -->
-                <div class="card blue-grey darken-4 hoverable">
+                <div class="card dark-primary hoverable">
                     <div class="card-content">
                         <span class="card-title activator white-text row">
                             <form class="col s12">
@@ -189,9 +188,6 @@
             </div>
         </div>
     </main>
-
-    <!-- You guessed it; Footer. -->
-    {{> footer}}
 
 </body>
 </template>

@@ -1,4 +1,4 @@
-Template.signUp.onRendered(function(){
+Template.enroll.onRendered(function(){
 
       $('.button-collapse').sideNav();
       $('.collapsible').collapsible();
@@ -24,7 +24,7 @@ Template.signUp.onRendered(function(){
 
 
 
-Template.signUp.events({
+Template.enroll.events({
       'click #sign_up_submit' : function(event, template){
             event.preventDefault();
 
