@@ -65,19 +65,18 @@ Router.route('/forgotPassword', {
 Router.route('departmentOverview/allCourses/:_id', {
     template: 'allCourses',
     name: 'allCourses',
-    data : function(){
-        var currentDepartment = this.params._id;
-        return Departments.findOne({ _id: currentDepartment });
-    }
+    data : function() {
+        var currentDepartmentID = this.params._id;
+        Meteor.call("relevantDepartment", currentDepartmentID);
+      }
 });
 
 
 Router.route('departmentOverview/allCourses/courseDetails/:_id', {
     template: 'courseDetails',
     name: 'courseDetails',
-    data : function(){
+    data : function() {
         var currentCourse = this.params._id;
-        return Courses.findOne({ _id: currentCourse });
-    } 
-    
+        Meteor.call("relevantCourse", currentCourse);
+    }
 })

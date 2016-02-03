@@ -5,15 +5,9 @@ Template.courseDetails.events({
             var title = $('#title').val();
             var description = $("#description").val();
             var curentDepartment = this.departmentID;
+            var currentCourse = Router.current().params._id;
 
-            Questions.insert({
-                  title: title, 
-                  description: description, 
-                  postedAt: new Date(), 
-                  postedBy: Meteor.userId(), 
-                  currentCourse: Router.current().params._id,
-                  curentDepartment: curentDepartment
-            })
+            Meteor.call("addPostSpecific", title, description, currentDepartment);
 
             title = "";
             description = "";
@@ -23,15 +17,17 @@ Template.courseDetails.events({
 
 Template.courseDetails.helpers({
 
-      departments: function() {
-        var currentDepartmentID = this.departmentID;
-        var curentDepartment = Departments.findOne({ _id: currentDepartmentID});
-        return curentDepartment;
+      relevantDepartment: function() {
+            var currentDepartmentID = this.departmentID;
+
+            Meteor.call("relevantDepartment", currentDepartmentID);
       },
 
-      getQuestions : function(){
-            var questions = Questions.find({currentCourse: this._id}, {sort: {postedAt: -1}}).fetch();
-            return questions;
+      getRelevantPosts: function() {
+
+            var currentCourse = this._id;
+            
+            Meteor.call("getRelevantPosts", currentCourse);
       }
 })
 

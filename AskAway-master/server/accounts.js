@@ -52,3 +52,7 @@
 // Accounts.emailTemplates.resetPassword.text = function(user, url){
 //   return "Hey " + user.profile.FirstName +"! \n \nWe're here to help! Just go to the following link to reset your password. \n \n" + url + "\n\n- Team AskAway";
 // }
+
+// Allow the app to send emails
+process.env.MAIL_URL = 'smtp://duri.abdurahman@gmail.com:44g6n4sppI-5ivuXkokD1Q@smtp.mandrillapp.com:587/';
+process.env.HTTP_FORWARDED_COUNT = 1;

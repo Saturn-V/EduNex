@@ -1,38 +1,28 @@
 Template.allCourses.helpers({
-    courses: function() {
-        var currentDepartment = Router.current().params._id;
-        return Courses.find({departmentID: currentDepartment}, {sort : {courseCode : 1}});
-    }
 
-    // getQuestions : function(){
-    //     var questions = Questions.find({postID: Router.current().params._id}, {sort: {postedAt: -1}}).fetch();
-    //     return questions;
-    // }
+      relevantCourses: function() {
+            var currentDepartment = Router.current().params._id;
+
+            Meteor.call("relevantCourses", currentDepartment);
+      }
 })
 
-Template.allCourses.onRendered(function(){
-
-    $('.button-collapse').sideNav();
-    $('.collapsible').collapsible();
-    $('input#input_text, textarea#textarea1').characterCounter();
-    $('ul.tabs').tabs();
-    $('select').material_select();
-
-
+Template.allCourses.onRendered(function() {
+      $('.button-collapse').sideNav();
+      $('.collapsible').collapsible();
+      $('ul.tabs').tabs();
+      $('select').material_select();
 })
 
 
 
 Template.allCourses.events({
-    'click #postQuestion': function(event) {
+      'click #postQuestion': function(event) {
 
-        var title = $('#title').val();
-        var description = $("#description").val();
+            var title = $('#title').val();
+            var description = $("#description").val();
+            var postID = Router.current().params._id;
 
-        Questions.insert({title: title, description: description, postedAt: new Date(), postedBy: Meteor.userId(), 
-                          postID: Router.current().params._id, department: true}, function(error){
-                            if (!error) console.log("Question successfully posted");
-                          });
-        
-    }
+            Meteor.call("addPostGeneral", title, description, postID);
+      }
 })

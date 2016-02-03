@@ -12,6 +12,6 @@ Template.signedInSlideMenu.onRendered(function(){
 Template.signedInSlideMenu.events({
 	'click #log-out' : function (event) {
 		Meteor.logout();
-		Router.go('/landing');
+		Router.go('/');
 	}
 });
