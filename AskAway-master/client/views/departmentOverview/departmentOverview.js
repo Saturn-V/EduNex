@@ -3,8 +3,9 @@ Template.departmentOverview.events({
 
 
 Template.departmentOverview.helpers({
-	getDepartments: function() {
-    	Meteor.call("getDepartments");
+	getDepartments : function(){
+		var departments = Departments.find({}, {sort : {department : -1}});
+      	return departments;  
     }
 });
 

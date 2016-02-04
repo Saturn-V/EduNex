@@ -16,8 +16,8 @@ Template.home.events({
 })
 
 Template.home.helpers({
-	getPosts : function() {
-    		var posts = Meteor.call("getPosts");
-    		return posts;
+	getPosts: function() {
+		var posts = Questions.find({}, {sort: {postedAt: -1}});
+        	return posts;
     	}
 })

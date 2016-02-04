@@ -7,7 +7,7 @@ Template.courseDetails.events({
             var curentDepartment = this.departmentID;
             var currentCourse = Router.current().params._id;
 
-            Meteor.call("addPostSpecific", title, description, currentDepartment);
+            Meteor.call("addPostSpecific", title, description, currentCourse, currentDepartment);
 
             title = "";
             description = "";
@@ -18,16 +18,13 @@ Template.courseDetails.events({
 Template.courseDetails.helpers({
 
       relevantDepartment: function() {
-            var currentDepartmentID = this.departmentID;
-
-            Meteor.call("relevantDepartment", currentDepartmentID);
+            var curentDepartment = Departments.findOne({ _id: Router.current().params._id});
+            return curentDepartment;
       },
 
-      getRelevantPosts: function() {
-
-            var currentCourse = this._id;
-            
-            Meteor.call("getRelevantPosts", currentCourse);
+      getRelevantPosts : function(){
+            var relevantPosts = Questions.find({currentCourse: Router.current().params._id}, {sort: {postedAt: -1}}).fetch();
+            return relevantPosts;
       }
 })
 

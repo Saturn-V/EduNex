@@ -66,8 +66,8 @@ Router.route('departmentOverview/allCourses/:_id', {
     template: 'allCourses',
     name: 'allCourses',
     data : function() {
-        var currentDepartmentID = this.params._id;
-        Meteor.call("relevantDepartment", currentDepartmentID);
+        var curentDepartment = Departments.findOne({ _id: this.params._id});
+            return curentDepartment;
       }
 });
 
@@ -76,7 +76,7 @@ Router.route('departmentOverview/allCourses/courseDetails/:_id', {
     template: 'courseDetails',
     name: 'courseDetails',
     data : function() {
-        var currentCourse = this.params._id;
-        Meteor.call("relevantCourse", currentCourse);
+            var getCourse = Courses.findOne({ _id: this.params._id });
+            return getCourse;
     }
 })

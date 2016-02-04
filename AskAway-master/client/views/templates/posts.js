@@ -1,9 +1,8 @@
 Template.posts.helpers({
-  getComments : function() {
-	   var currentPost = this._id;
-
-      Meteor.call("getComments", currentPost)
-  },
+  getComments : function(){
+    var comments = Comments.find({postID: this._id}, {sort: {postedAt: -1}}).fetch();
+            return comments;
+      },
 
       isUsers : function(){
             var currentUser = Meteor.userId();
@@ -36,11 +35,13 @@ Template.posts.events({
             var comment = $('#comment').val();
             var currentPost = this._id;
 
+            console.log(currentPost);
+
             Meteor.call("addComment", comment, currentPost);
       },
 
       'click #addNewCommentButton' : function(event) {
-        $('#addNewComment').openModal();
+        $('.modal-trigger').leanModal();
       }
 })
 

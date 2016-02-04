@@ -1,9 +1,8 @@
 Template.allCourses.helpers({
 
-      relevantCourses: function() {
+      getRelevantCourses: function() {
             var currentDepartment = Router.current().params._id;
-
-            Meteor.call("relevantCourses", currentDepartment);
+            return Courses.find({departmentID: currentDepartment}, {sort : {courseCode : 1}});
       }
 })
 
