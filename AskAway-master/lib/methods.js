@@ -15,14 +15,14 @@ Meteor.methods ({
             })
       },
 
-      addPostSpecific: function(title, description, currentCourse, curentDepartment) {
+      addPostSpecific: function(title, description, currentCourse, currentDepartment) {
             Questions.insert({
                   title: title, 
                   description: description, 
                   postedAt: new Date(), 
                   postedBy: Meteor.userId(), 
                   currentCourse: currentCourse,
-                  curentDepartment: curentDepartment
+                  curentDepartment: currentDepartment
             });
       },
 

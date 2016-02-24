@@ -20,14 +20,15 @@
 
                                     <div class="card-action">
 
-                                          <!-- Modal Trigger -->
+<!-- 
+                                           Modal Trigger 
                                           <a class="btn-floating modal-trigger right btn-large waves-effect waves-light red z-depth-5" style="bottom: 10px; left: 30px" href="#addNewComment" id="addNewCommentButton">
                                           	<i class="material-icons">
                                           		add
                                           	</i>
                                           </a>
                                           
-                                          <!-- Modal Structure for adding a Comment-->
+                                           Modal Structure for adding a Comment
                                           <div id="addNewComment" class="modal bottom-sheet dark-primary">
                                                 <div class="modal-content">
                                                       <div class="row">
@@ -50,6 +51,37 @@
                                                       </a>
                                                 </div>
                                           </div>
+
+ -->
+
+                                          <!-- Modal Trigger -->
+                                          <a class="btn-floating modal-trigger right btn-large" href="#addCommentModalTrigger">
+                                                <i class="material-icons">
+                                                      add
+                                                </i>
+                                          </a>
+
+                                          <!-- Modal Structure -->
+                                          <div id="addCommentModalTrigger" class="modal bottom-sheet dark-primary">
+                                                <div class="modal-content">
+                                                      <div class="row">
+                                                            <div class="input-field col s12">
+                                                                  <textarea id="comment" class="white-text materialize-textarea"></textarea>
+                                                                  <label for="comment" class="white-text">Comment</label>
+                                                            </div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                      <a href="#!" class="permaTeal modal-action modal-close btn right" id="addComment">
+                                                            <i class="material-icons">
+                                                                  send
+                                                            </i>
+                                                      </a>
+                                                </div>
+                                          </div>
+
+
 
                                     </div>
                               </div>

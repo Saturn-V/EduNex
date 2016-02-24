@@ -17,6 +17,11 @@ Router.route('/', {
   name: "landing"
 });
 
+Router.route('/createProfile', {
+  template: 'createProfile',
+  name: 'createProfile'
+});
+
 Router.route('/enroll', {
   template: 'enroll',
   name: 'enroll'
@@ -67,6 +72,7 @@ Router.route('departmentOverview/allCourses/:_id', {
     name: 'allCourses',
     data : function() {
         var curentDepartment = Departments.findOne({ _id: this.params._id});
+        Session.set("departmentID", this.params._id);
             return curentDepartment;
       }
 });

@@ -5,7 +5,6 @@ Template.mainLayout.onRendered(function(){
     $('input#input_text, textarea#textarea1').characterCounter();
     $('ul.tabs').tabs();
     $('select').material_select();
-    $('.modal-trigger').leanModal();
 
     var template = this;
     slideout = new Slideout({

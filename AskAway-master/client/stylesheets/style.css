@@ -47,6 +47,14 @@ main {
   background-color: #607D8B !important;
 }
 
+.hamburger-svg {
+  fill: #ffffff;
+}
+
+.profile-display {
+  max-height: 100%;
+  max-width: 100%; 
+}
 
 /* Slideout.js styling */
 
