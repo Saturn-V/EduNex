@@ -1,0 +1,35 @@
+<template name="Header">
+    <header>
+
+        <ul id="slide-out" class="side-nav">
+            <!-- Displays Side Menu 'menu' according to user or non-user -->
+            {{#if currentUser}}
+                {{> SideNavIn}}
+            {{else}}
+                {{> SideNavOut}}
+            {{/if}}
+            <!-- End -->
+        </ul>
+
+
+
+        <main class="slideout-panel" id="panel">
+
+            <!-- Main Nav bar -->
+            <header>
+                <nav class="nav-wrapper dark-primary">
+
+                        <a href="#" data-activates="slide-out" class="button-collapse" style="display: inline; padding: 0 0.75rem"><i class="fa fa-bars left"></i></a>
+                        {{#if currentUser}}
+                            <a href="/" class="brand-logo center" style="font-weight: 200">AskAway</a>
+                        {{else}}
+                            <a href="/" class="brand-logo center" style="font-weight: 200">AskAway</a>
+                        {{/if}}
+
+                </nav>
+            </header>
+             <!-- End -->
+
+        </main>
+    </header>
+</template>
