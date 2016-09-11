@@ -1,0 +1,48 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base@1.0.4             # Packages every Meteor app needs to have
+mobile-experience@1.0.4       # Packages for a great mobile UX
+mongo@1.1.12                   # The database Meteor supports right now
+blaze-html-templates@1.0.4    # Compile .html files into Meteor Blaze views
+session@1.1.6                 # Client-side reactive dictionary for your app
+jquery@1.11.9                  # Helpful client-side library
+tracker@1.1.0                 # Meteor's client-side reactive programming library
+
+es5-shim@4.6.14                # ECMAScript 5 compatibility for older browsers.
+ecmascript@0.5.8              # Enable ECMAScript2015+ syntax in app code
+
+kadira:flow-router             # Generate route's for web app
+kadira:blaze-layout
+erasaur:meteor-lodash
+stolinski:stylus-multi
+fortawesome:fontawesome       # Font Awesome's library of Icons
+spiderable@1.0.13
+fastclick@1.0.12
+raix:handlebar-helpers
+aldeed:collection2
+aldeed:autoform                 # Creates magical forms
+accounts-password@1.3.0
+accounts-ui@1.1.9
+accounts-facebook
+accounts-google
+accounts-github
+accounts-base@1.2.11
+zimme:active-route
+gwendall:auth-client-callbacks
+standard-minifier-css@1.2.0
+standard-minifier-js@1.2.0
+shell-server@0.2.1
+meteortoys:allthings            # Enables a debug menu for mongo on the web
+datariot:ganalytics
+underscore@1.0.9
+materialize:materialize@=0.97.0   # Materialize CSS Framework
+email@1.1.17
+kevohagan:sweetalert            # Pretty alerts
+jamesfebin:azure-blob-upload
+anti:fake
+dburles:factory
+chriswessels:slideout           # Package for Slideout.js
