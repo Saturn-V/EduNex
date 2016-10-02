@@ -2,9 +2,19 @@ Meteor.startup(function () {
 
 
 
-     // while (Departments.find().count() <= 20) {
-     //     Departments.insert({department: "Computer Science",
-     //                       img: "http://www.jsums.edu/compscience/files/2014/06/compsc.png"});
+    //  while (Departments.find().count() <= 20) {
+    //      Departments.insert({
+            //  departmentName: "Computer Science",
+            //  departmentImg: "http://i.imgur.com/3bNELWJ.jpg",
+            //  numberOfCourses: 2
+            //  courses_id: {
+            //       1:asdsa,
+                    //  2:asdasfa
+            //  }
+    //      });
+     //
+    //      for (daprtment in department)
+    //         {> templateName depdepartment}
 
 
 //         Questions.insert({ title: "Comment subject",
@@ -16,9 +26,16 @@ Meteor.startup(function () {
 //                           }); //this is which post it came from - either the  departmentID or the courseID
 
 
-//         Courses.insert({ courseName: "Web Programming",
+//         Courses.insert({
+                        //   courseName: "Intro to Computer Science",
+                        //   courseImg: "http://i.imgur.com/EGoOMbU.jpg",
+                        //   courseDescription: "Learn the fundamentals of the HTML, CSS and Python Programming Languages",
+                        //   courseTeacher: "Mr. HyperText",
+                        //   courseCapacity: 0,
+                        //   department_id: "9CzwvJ2hcC3pDmxar"
+
 //                           courseCode: "CSC101",
-//                           // departmentID: Departments.findOne()._id,
+//                           departmentID: Departments.findOne()._id,
 //                           departmentName: "Computer Science",
 //                           imageURL: "http://www.jsums.edu/compscience/files/2014/06/compsc.png",
 //                           teacherID: this.userId,

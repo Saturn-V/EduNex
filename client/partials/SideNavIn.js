@@ -9,6 +9,6 @@ Template.SideNavIn.onRendered(function(){
 Template.SideNavIn.events({
 	'click #log-out' : function (event) {
 		Meteor.logout();
-		Router.go('/');
+		FlowRouter.go('/');
 	}
 });

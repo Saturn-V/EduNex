@@ -1,0 +1,58 @@
+<template name="DepartmentsOverview">
+
+      {{> Header}}
+
+      <body>
+            <main>
+                  <!-- Department title -->
+                  <div class="row">
+                        <div class="col s12 m12">
+                              <div class="card dark-primary hoverable">
+                                    <div class="card-content white-text">
+                                          <span class="card-title" style="font-size: 45px; font-weight: 200">Department</span>
+
+
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="card-content white-text">
+                                         <p style="font-size: 25px; font-weight: 200">Choose the department your question pertains to.</p>
+                                   </div>
+                              </div>
+                        </div>
+                 </div>
+
+                  <div class="row">
+
+                        <!-- makes a card for every department in the Collection "Departments" if they're ready, else show loading screen -->
+                        {{#if Template.subscriptionsReady}}
+                              {{#each department}}
+                                    <a href="/departmentsOverview/coursesOverview/{{_id}}">
+                                          <div class="col s12 m6">
+                                                <div class="card horizontal">
+                                                      <div class="card-image"><!-- needs style that sets height and overflow to hidden -->
+                                                            <img src="{{departmentImg}}">
+                                                      </div>
+                                                      <div class="card-stacked department-card white-text">
+                                                            <div class="card-content">
+                                                                  <h1 class="department-name">{{departmentName}}</h1>
+                                                            </div>
+                                                            <div class="card-action">
+                                                                  <h5 class="department-details">Courses: {{numberOfCourses}}</h5>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </a>
+                              {{/each}}
+                        {{else}}
+                              <!-- Some loading partial -->
+                        {{/if}}
+
+                  </div>
+
+            </main>
+      </body>
+
+      {{> Footer}}
+
+</template>

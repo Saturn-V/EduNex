@@ -20,6 +20,18 @@ Template.LogIn.events({
         email = email.replace(/^\s*|\s*$/g, '');
         password = password.replace(/^\s*|\s*$/g, '');
 
+        function checkEmailIsValid(email) {
+            return email
+        };
+
+        function checkPasswordIsValid(password) {
+            if (password.length < 8) {
+                return false
+            } else {
+                return true
+            }
+        };
+
         //validate
         var emailIsValid = checkEmailIsValid(email);
         var passwordIsValid = checkPasswordIsValid(password);
@@ -47,7 +59,7 @@ Template.LogIn.events({
                 } else {
                     console.log("Success! User logged in!");
                     swal("Welcome!", "Login Successful!", "success");
-                    Router.go('/home');
+                    FlowRouter.go('/home');
                 }
             });
         }

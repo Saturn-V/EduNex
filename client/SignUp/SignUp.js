@@ -23,6 +23,18 @@ Template.SignUp.events({
             email = email.replace(/^\s*|\s*$/g, '');
             password = password.replace(/^\s*|\s*$/g, '');
 
+            function checkEmailIsValid(email) {
+                return email
+            };
+
+            function checkPasswordIsValid(password) {
+                if (password.length < 8) {
+                    return false
+                } else {
+                    return true
+                }
+            };
+
             //validate
             var emailIsValid = checkEmailIsValid(email);
             var passwordIsValid = checkPasswordIsValid(password);
@@ -50,7 +62,7 @@ Template.SignUp.events({
                     } else {
                         console.log("Success! Account created. Now verify your email address!");
                         swal("Your account has been created, " + firstName + " !", "Verify your email address using the link we just sent you", "success");
-                        Router.go('/home');
+                        FlowRouter.go('/home');
                     }
                 });
             }

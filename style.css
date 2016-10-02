@@ -15,6 +15,43 @@ main {
       flex: 1 0 auto;
 }
 
+/* Post Styles */
+.noPosts {
+    font-size: 50px;
+    font-weight: 400;
+}
+
+/* Department Styles */
+.department-card {
+    background-color: #455A64;
+}
+
+.department-name {
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.department-details {
+    font-weight: 300;
+}
+
+.card-image {
+    overflow: hidden;
+    height: 250px;
+}
+
+img {
+    display: block;
+}
+/* END */
+
+
+
+
+
+
+
+
 .tabs .indicator{
   	background-color: #009688;
 }
@@ -85,4 +122,10 @@ main {
 
 .slideout-open .slideout-menu {
   display: block;
+}
+
+/* Styles for mobile (phablets and smaller) */
+@media screen and (max-width:768px) {
+    /* These styles only apply to mbile */
+
 }
