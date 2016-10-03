@@ -15,6 +15,7 @@ Template.SignUp.events({
 
             var firstName = $("#first_name").val();
             var lastName = $("#last_name").val();
+            var name = firstName + " " + lastName;
             var password = $("#usersPassword").val();
             var email = $("#my_email").val();
             var association = $(".association a.active").text();
@@ -46,7 +47,10 @@ Template.SignUp.events({
             } else {
                 Accounts.createUser({
                     email: email,
-                    password: password
+                    password: password,
+                    profile: {
+                        name: name
+                    }
                 }, (error) => {
                     if (error) {
                         swal({

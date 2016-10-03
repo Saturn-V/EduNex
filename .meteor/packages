@@ -46,3 +46,4 @@ jamesfebin:azure-blob-upload
 anti:fake
 dburles:factory
 chriswessels:slideout           # Package for Slideout.js
+momentjs:moment

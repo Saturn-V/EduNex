@@ -6,20 +6,23 @@ Template.Posts.onCreated(function() {
 });
 
 Template.Posts.helpers({
+    firstName: () => {
+        return Meteor.user().profile.name;
+    },
+
+    postIsUsers : function(){
+          var currentUser = Meteor.userId();
+
+          if (currentUser === this.postedBy) {
+                return true;
+          } else {
+                return false;
+          }
+    }
     //   getComments : function(){
     //         var comments = Comments.find({postID: this._id}, {sort: {postedAt: -1}}).fetch();
     //         return comments;
     //   },
-
-    //   isUsers : function(){
-    //         var currentUser = Meteor.userId();
-      //
-    //         if (currentUser === this.postedBy) {
-    //               return true;
-    //         } else {
-    //               return false;
-    //         }
-    //   }
 });
 
 Template.Posts.events({

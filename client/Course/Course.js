@@ -30,18 +30,61 @@ Template.Course.helpers({
 });
 
 Template.Course.events({
+    
       'click #createPost': function(event) {
-            event.preventDefault();
+
+          event.preventDefault();
 
             var title = $('#title').val();
             var description = $("#description").val();
-            var currentDepartment = this.departmentID;
-            var currentCourse = Router.current().params._id;
+            var postSource_id = FlowRouter.getParam('_id');
 
-            Meteor.call("addPostSpecific", title, description, currentCourse, currentDepartment);
+            function checkTitleIsValid(title) {
+                if (title.length < 30) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
 
-            title = "";
-            description = "";
+            function checkDescriptionIsValid(description) {
+                if (description.length > 30) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            var titleIsValid = checkTitleIsValid(title);
+            var descriptionIsValid = checkDescriptionIsValid(description);
+
+            if (!titleIsValid || !descriptionIsValid) {
+                if (!titleIsValid) {
+                    swal("Your title is too long! Title must be a maximum of 30 Characters.", "warning");
+                }
+                if (!descriptionIsValid) {
+                    swal("Your description is not long enough! description must be a minimum of 30 Characters.", "warning");
+                }
+            } else {
+                Meteor.call("addCoursePost", title, description, postSource_id, function (error, result) {
+                    if (error) {
+                        swal({
+                            title: "Something appears wrong",
+                            text: error.reason,
+                            type: "warning",
+                            showCancelButton: false,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Let's try again!",
+                            closeOnConfirm: false
+                        });
+                        console.log("Something went wrong when generating a post! " + error.reason);
+                    } else {
+                        console.log("Success! Post generated!");
+                        swal("Posted!", "Post Successful!", "success");
+                        FlowRouter.go('/home');
+                    }
+                });
+            }
       }
 });
 

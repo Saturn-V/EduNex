@@ -4,13 +4,21 @@
             <div class="col s12 m6">
                   <div class="card blue-grey darken-4">
                         <div class="card-content white-text">
+                              <div class="section">
+                                    {{#if postIsUsers}}
+                                          <a href="!#" id="removePost"><i class="fa fa-times right" style="color: white"></i></a>
+                                    {{/if}}
+                                    <p class="card-title" style="font-weight: 400">{{firstName}}</p>
+                                    <span style="font-size: 11px">{{formatPostDate postedAt}}</span>
+                              </div>
                               <span class="card-title" style="font-weight: 400">{{postTitle}}</span>
                               <div class="divider"></div>
                               <p style="padding-top: 2%; font-weight: 300">{{postDescription}}</p>
                         </div>
                         <div class="card-action">
-                              <a href="#">This is a link</a>
-                              <a href="#">This is a link</a>
+                              <a class="waves-effect waves-teal btn-flat">Comment</a>
+                              <a class="waves-effect waves-teal btn-flat">Up Vote</a>
+                              <a class="waves-effect waves-teal btn-flat">Down Vote</a>
                         </div>
                   </div>
             </div>
