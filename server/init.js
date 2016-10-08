@@ -1,5 +1,7 @@
 Meteor.startup(function () {
-
+    Meteor.users.deny({
+        update() { return true; }
+    });
 
 
     //  while (Departments.find().count() <= 20) {

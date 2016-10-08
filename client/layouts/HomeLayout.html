@@ -1,7 +1,6 @@
 <template name="HomeLayout">
       {{> Header}}
       <body>
-            <main>
                   {{#if Template.subscriptionsReady}}
                         {{#each post}}
                               {{> Posts}}
@@ -12,7 +11,6 @@
                               <div class="indeterminate" style="color: #263238"></div>
                         </div>
                   {{/if}}
-            </main>
       </body>
       {{> Footer}}
 </template>

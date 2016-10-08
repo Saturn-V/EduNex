@@ -18,8 +18,6 @@ Template.CoursesOverview.helpers({
 })
 
 Template.CoursesOverview.onRendered(function() {
-      $('.button-collapse').sideNav();
-      $('.collapsible').collapsible();
       $('ul.tabs').tabs();
       $('select').material_select();
 })

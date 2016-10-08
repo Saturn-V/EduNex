@@ -1,4 +1,3 @@
-
 Template.HomeLayout.onCreated(function() {
     var self = this;
     self.autorun(()=> {
@@ -6,13 +5,9 @@ Template.HomeLayout.onCreated(function() {
     });
 });
 Template.HomeLayout.onRendered(function(){
-    $('.button-collapse').sideNav();
-    $('.collapsible').collapsible();
     $('input#input_text, textarea#textarea1').characterCounter();
     $('ul.tabs').tabs();
     $('select').material_select();
-    $('.modal-trigger').leanModal();
-    $("#sidenav-overlay").remove();
 });
 
 Template.HomeLayout.events({

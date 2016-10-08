@@ -11,6 +11,6 @@ Meteor.publish('posts', function() {
     return Posts.find({})
 });
 
-Meteor.publish('comments', function() {
-    return Comments.find({})
+Meteor.publish('comments', function(postSourceId) {
+    return Comments.find({postSourceId: postSourceId})
 });

@@ -24,6 +24,7 @@ Template.SignUp.events({
             email = email.replace(/^\s*|\s*$/g, '');
             password = password.replace(/^\s*|\s*$/g, '');
 
+            //Actual functions in another js file somewhere I forgot where tbh
             function checkEmailIsValid(email) {
                 return email
             };

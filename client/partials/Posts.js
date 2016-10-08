@@ -1,7 +1,9 @@
 Template.Posts.onCreated(function() {
     var self = this;
+    var postSourceId = this._id
     self.autorun(()=> {
         self.subscribe('posts');
+        self.subscribe('comments', postSourceId);
     });
 });
 
@@ -32,36 +34,43 @@ Template.Posts.events({
 
             Meteor.call("removePost", currentPost);
       },
+    //   'click #removeComment' : function(event) {
+    //         var currentPost = this._id;
+      //
+    //         Meteor.call("removeComment", currentPost);
+    //   },
+      //
 
-      'click #removeComment' : function(event) {
-            var currentPost = this._id;
+    'click #add_comment': function(event) {
 
-            Meteor.call("removeComment", currentPost);
-      },
+        event.preventDefault();
 
-      'click #addComment': function(event) {
-            event.preventDefault();
+        var comment = $('#comment').val();
+        var post_source_id = this._id;
 
-            var comment = $('#comment').val();
-            var currentPost = this._id;
-
-            console.log(currentPost);
-
-            Meteor.call("addComment", comment, currentPost);
-      }
+         Meteor.call("addComment", comment, post_source_id, function (error, result) {
+             if (error) {
+                 swal({
+                     title: "Something appears wrong",
+                     text: error.reason,
+                     type: "warning",
+                     showCancelButton: false,
+                     confirmButtonColor: "#DD6B55",
+                     confirmButtonText: "Let's try again!",
+                     closeOnConfirm: false
+                 });
+                 console.log("Something went wrong when generating a post! " + error.reason);
+             } else {
+                 console.log("Success! Post generated!");
+                 swal("Posted!", "Comment Successful!", "success");
+                 FlowRouter.go('/home');
+             }
+         });
+     }
 });
 
 Template.Posts.onRendered(function(){
-
-      $('input#input_text, textarea#textarea1').characterCounter();
-      $('select').material_select();
-      $('.modal-trigger').leanModal({
-            dismissible: true, // Modal can be dismissed by clicking outside of the modal
-            opacity: .5, // Opacity of modal background
-            in_duration: 300, // Transition in duration
-            out_duration: 200 // Transition out duration
-            // ready: function() { alert('Ready'); }, // Callback for Modal open
-            // complete: function() { alert('Closed'); } // Callback for Modal close
-            }
-      );
+    this.$('.modal-trigger').leanModal();
+    $('input#input_text, textarea#textarea1').characterCounter();
+    $('select').material_select();
 });

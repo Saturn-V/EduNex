@@ -30,7 +30,7 @@ Template.Course.helpers({
 });
 
 Template.Course.events({
-    
+
       'click #createPost': function(event) {
 
           event.preventDefault();
@@ -89,9 +89,6 @@ Template.Course.events({
 });
 
 Template.Course.onRendered(function(){
-
-      $('.button-collapse').sideNav();
-      $('.collapsible').collapsible();
       $('input#input_text, textarea#textarea1').characterCounter();
       $('ul.tabs').tabs();
       $('select').material_select();
